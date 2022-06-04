@@ -1,18 +1,20 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Events</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+  <h1>Events For Good</h1>
+  <div className="events">
+    <EventCard v-for="event in events" :key="event.id" :event="event"/>
   </div>
 </template>
 
 <script>
+// @ is an alias to /src
+import EventCard from '@/components/EventCard.vue';
 
 export default {
-  name: 'TheHome',
+  name: 'EventListView',
 
+  components: {
+    EventCard,
+  },
   data() {
     return {
       events: [
@@ -53,35 +55,9 @@ export default {
     };
   },
 };
-
 </script>
 
 <style scoped>
-h4 {
-  font-size: 20px;
-}
-
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-
 .events {
   display: flex;
   flex-direction: column;
