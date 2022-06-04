@@ -1,5 +1,5 @@
 <template>
-  <h1>Events For Good</h1>
+  <h1>Events for Good</h1>
   <div className="events">
     <EventCard v-for="event in events" :key="event.id" :event="event"/>
   </div>
@@ -12,7 +12,6 @@ import EventService from '@/services/EventService';
 
 export default {
   name: 'EventListView',
-
   components: {
     EventCard,
   },
@@ -21,7 +20,6 @@ export default {
       events: null,
     };
   },
-
   created() {
     EventService.getEvents()
       .then((response) => {
