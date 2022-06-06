@@ -18,4 +18,8 @@ export default {
     console.log(id);
     return apiClient.get(`/events/${id}`);
   },
+
+  postEvent(event) { // new post request
+    return apiClient.post('/events', event);
+  },
 };

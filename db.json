@@ -29,6 +29,26 @@
       "date": "July 22, 2022",
       "time": "11:00",
       "organizer": "Carey Wales"
+    },
+    {
+      "id": "a31f819d-83c6-4338-8737-8dca417d61cf",
+      "category": "nature",
+      "title": "asfas",
+      "description": "dfssssss",
+      "location": "eeeeee",
+      "date": "sdfasdf323wsd",
+      "time": "sdfsdfsdfsdfsfsfsdfd",
+      "organizer": "Kelvin Firmino"
+    },
+    {
+      "id": "59ff81f2-73dc-4d6b-abff-358d4d3e773a",
+      "category": "animal welfare",
+      "title": "asfasd",
+      "description": "fasdfasdfas",
+      "location": "dfasdfasdfasdfasdf",
+      "date": "asdfasdfasdfasdfasdfasdf",
+      "time": "sd",
+      "organizer": "Kelvin Firmino"
     }
   ]
 }
