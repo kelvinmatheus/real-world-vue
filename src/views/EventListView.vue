@@ -1,13 +1,18 @@
 <template>
-  <h1> Vuex - Events Count: {{ $store.getters.numberOfEvents }} Events for Good</h1>
+  <h1>{{ eventStore.numberOfEvents }} Events for Good</h1>
   <div className="events">
-    <EventCard v-for="event in events" :key="event.id" :event="event"/>
+    <EventCard
+      v-for="event in eventStore.events"
+      :key="event.id"
+      :event="event"
+    />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import EventCard from '@/components/EventCard.vue';
+import { useEventStore } from '../stores/EventStore';
 
 export default {
   name: 'EventListView',
@@ -15,20 +20,22 @@ export default {
     EventCard,
   },
 
+  setup() {
+    const eventStore = useEventStore();
+
+    return {
+      eventStore,
+    };
+  },
+
   created() {
-    this.$store.dispatch('fetchEvents')
+    this.eventStore.fetchEvents()
       .catch((error) => {
         this.$router.push({
           name: 'ErrorDisplayView',
-          params: { error },
+          params: error,
         });
       });
-  },
-
-  computed: {
-    events() {
-      return this.$store.state.events;
-    },
   },
 };
 </script>
