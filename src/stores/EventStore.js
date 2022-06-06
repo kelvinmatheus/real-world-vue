@@ -8,4 +8,8 @@ export const useEventStore = defineStore('EventStore', {
       event: {},
     };
   },
+
+  getters: {
+    numberOfEvents: state => state.events.length,
+  },
 });

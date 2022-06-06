@@ -23,9 +23,8 @@ export default {
       <router-link :to="{ name: 'EventCreateView' }">Create Event</router-link> |
       <router-link :to="{ name: 'AboutView' }">About</router-link>
     </div>
-    <router-view /> |
-    <p>Logged in as {{ userStore.user }}</p>
-    <p>Event Pinia Store {{ eventStore[0] }}</p>
+    <p>Logged in as {{ userStore.firstName }}</p>
+    <router-view />
   </div>
 </template>
 
