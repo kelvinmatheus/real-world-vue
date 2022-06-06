@@ -106,16 +106,19 @@ export default {
         organizer: this.$store.state.user,
       };
 
-      this.$store.dispatch('createEvent', event);
-
-      // EventService.postEvent(event)
-      //   .then(() => {
-      //     // add event to Vuex state
-      //     this.$store.commit('ADD_EVENT', event);
-      //   })
-      //   .catch((error) => {
-      //     console.log(error);
-      //   });
+      this.$store.dispatch('createEvent', event)
+        .then(() => {
+          this.$router.push({
+            name: 'EventCreateView',
+            params: { id: event.id },
+          });
+        })
+        .catch((error) => {
+          this.$router.push({
+            name: 'ErrorDisplayView',
+            params: { error },
+          });
+        });
     },
   },
 };

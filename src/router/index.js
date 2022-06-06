@@ -3,6 +3,7 @@ import EventListView from '../views/EventListView.vue';
 import EventDetailsView from '../views/EventDetailsView.vue';
 import EventCreateView from '../views/EventCreateView.vue';
 import AboutView from '../views/AboutView.vue';
+import ErrorDisplayView from '../views/ErrorDisplayView.vue';
 import NotFoundView from '../views/NotFoundView.vue';
 
 const routes = [
@@ -18,7 +19,7 @@ const routes = [
     component: EventDetailsView,
   },
   {
-    path: '/event/create',
+    path: '/events/create',
     name: 'EventCreateView',
     component: EventCreateView,
   },
@@ -26,6 +27,12 @@ const routes = [
     path: '/about',
     name: 'AboutView',
     component: AboutView,
+  },
+  {
+    path: '/error/:error',
+    name: 'ErrorDisplayView',
+    props: true,
+    component: ErrorDisplayView,
   },
   {
     path: '/:pathMatch(.*)',

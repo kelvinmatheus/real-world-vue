@@ -16,7 +16,13 @@ export default {
   },
 
   created() {
-    this.$store.dispatch('fetchEvents');
+    this.$store.dispatch('fetchEvents')
+      .catch((error) => {
+        this.$router.push({
+          name: 'ErrorDisplayView',
+          params: { error },
+        });
+      });
   },
 
   computed: {
