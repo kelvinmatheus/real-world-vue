@@ -5,11 +5,16 @@ export default {
   setup() {
     const capacity = ref(3);
 
-    return { capacity };
+    function increaseCapacity() {
+      capacity.value += 1;
+    }
+
+    return { capacity, increaseCapacity };
   },
 };
 </script>
 
 <template>
   <div>Capacity Composition API: {{ capacity }}</div>
+  <button @click="increaseCapacity">Increase Capacity</button>
 </template>
