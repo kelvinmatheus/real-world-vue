@@ -23,6 +23,7 @@ export default {
 
 <template>
   <div>
+    <p>Vue 2</p>
     <p>Spaces Left: {{ spacesLeft }} out of {{ capacity }}</p>
   </div>
   <button @click="increaseCapacity">Increase Capacity</button>

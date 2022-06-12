@@ -23,6 +23,9 @@ export default {
       <router-link :to="{ name: 'EventCreateView' }">Create Event</router-link> |
       <router-link :to="{ name: 'Vue2View' }">Vue 2</router-link> |
       <router-link :to="{ name: 'Vue3CompositionView' }">Vue 3 Composition API</router-link> |
+      <router-link :to="{ name: 'Vue3CompositionReactiveView' }">
+        Vue 3 Composition API - Reactive
+      </router-link> |
       <router-link :to="{ name: 'AboutView' }">About</router-link>
     </div>
     <p>Logged in as {{ userStore.firstName }}</p>
