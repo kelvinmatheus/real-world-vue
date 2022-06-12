@@ -1,22 +1,22 @@
 <script>
-import { ref, computed } from 'vue';
+import useEventSpace from '@/composables/useEventSpace';
+import useMapping from '@/composables/useMapping';
 
 export default {
   setup() {
-    const capacity = ref(3);
-    const attending = ref(['Tim', 'Bob', 'Joe']);
+    const {
+      capacity, attending, spacesLeft, increaseCapacity,
+    } = useEventSpace();
 
-    const spacesLeft = computed(() => capacity.value - attending.value.length);
-
-    function increaseCapacity() {
-      capacity.value += 1;
-    }
+    const { map, embedId } = useMapping();
 
     return {
       capacity,
       attending,
-      increaseCapacity,
       spacesLeft,
+      increaseCapacity,
+      map,
+      embedId,
     };
   },
 };
@@ -25,6 +25,7 @@ export default {
 <template>
   <div>
     <p>Spaces Left: {{ spacesLeft }} out of {{ capacity }}</p>
+    <p>Map: {{ map }} - Embed ID {{ embedId }}</p>
   </div>
   <button @click="increaseCapacity">Increase Capacity</button>
 
